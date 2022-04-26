@@ -1,5 +1,9 @@
 # Solcast Solar 
 
+
+This repo is no longer being maintained as there are problems or errors with the release of HA 2022.4
+I am working on a newer version. 
+
 Home Assistant(https://www.home-assistant.io/) Component
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg?style=for-the-badge)](https://github.com/custom-components/hacs)
