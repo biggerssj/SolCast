@@ -166,9 +166,9 @@ class SolcastApi:
             if "resource_id" in site:
                 d["resource_id"] = site["resource_id"]
             if "capacity" in site:
-                d["capacity"] = site["capacity"]
+                d["capacity"] = site["capacity"] / 2
             if "capacity_dc" in site:
-                d["capacity_dc"] = site["capacity_dc"]
+                d["capacity_dc"] = site["capacity_dc"] / 
             if "longitude" in site:
                 d["longitude"] = site["longitude"]
             if "latitude" in site:
@@ -344,7 +344,7 @@ class SolcastApi:
                     for x in ae['estimated_actuals']:
                         z = parse_datetime(x['period_end']).astimezone() - timedelta(minutes=30)
                         if z.date() == today:
-                            _data.append({"period_end": z,"pv_estimate": x["pv_estimate"]*0.5})
+                            _data.append({"period_end": z,"pv_estimate": x["pv_estimate"]*0.25})
 
                     _data = sorted(_data, key=itemgetter("period_end"))
                     #_s.update({site['resource_id']:{'estimated_actuals': _data}})
@@ -358,7 +358,7 @@ class SolcastApi:
                 for x in af['forecasts']:
                     z = parse_datetime(x['period_end']).astimezone() - timedelta(minutes=30)
                     if z.date() < lastday:
-                        _data2.append({"period_end": z,"pv_estimate": x["pv_estimate"]*0.5})
+                        _data2.append({"period_end": z,"pv_estimate": x["pv_estimate"]*0.25})
 
                 # _data2 = sorted(_data2, key=itemgetter("period_end"))
                 # _s.update({site['resource_id']:{'forecasts': _data2}})
