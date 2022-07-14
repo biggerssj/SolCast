@@ -168,7 +168,7 @@ class SolcastApi:
             if "capacity" in site:
                 d["capacity"] = site["capacity"] / 2
             if "capacity_dc" in site:
-                d["capacity_dc"] = site["capacity_dc"] / 
+                d["capacity_dc"] = site["capacity_dc"] / 2
             if "longitude" in site:
                 d["longitude"] = site["longitude"]
             if "latitude" in site:
